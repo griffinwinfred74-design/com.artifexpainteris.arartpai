@@ -1,0 +1,17 @@
+platform :android do
+  lane :upload_to_internal do
+    supply(
+      json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"],
+      package_name: "com.artifexpainteris.arartpai",
+      aab: "build_output/com.artifexpainteris.arartpai_2.aab", 
+      track: "beta",
+      release_status: "draft",
+      track_promote_release_status: "draft",
+      changes_not_sent_for_review: true,
+      skip_upload_changelogs: false,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_metadata: true
+    )
+  end
+end
